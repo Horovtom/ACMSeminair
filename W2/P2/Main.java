@@ -1,91 +1,81 @@
 package P2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Stack;
 
-/**
- * Created by lactosis on 12.10.17.
- */
 public class Main {
+    private ArrayList<ArrayList<Integer>> connections;
+    //private int[][] connections;
+    //private int[] connectionCounts;
+    private int maxDist;
+    private  int numOfComputers;
 
-    int[][] nodes;
-    int[] slots;
 
-    int[] depths;
-
-    public void getAnswer() {
-
-        depths = new int[slots.length];
-        int deepestNode = findDeepestNode(0, false);
-        depths = new int[slots.length];
-        findDeepestNode(deepestNode, true);
-    }
-
-    private int findDeepestNode(int v, boolean print) {
-
-        boolean[] visited = new boolean[slots.length];
-        dfsDown(v, 0, visited);
-
-        int max = 0;
-        int maxNode = 0;
-        for (int i = 0; i < depths.length; i++) {
-            if (depths[i] > max) {
-                max = depths[i];
-                maxNode = i;
-            }
-        }
-        if (print) {
-            System.out.println((int) Math.ceil(max / 2.0));
-        }
-        return maxNode;
-    }
-
-    private void dfsDown(int node, int depth, boolean[] visited) {
-        if (visited[node]) return;
-        depths[node] = depth;
-
-        visited[node] = true;
-        for (int i = 0; i < slots[node]; i++) {
-            dfsDown(nodes[node][i], depth + 1, visited);
-        }
-        visited[node] = false;
+    public static void main(String[] args) {
+        Main m = new Main();
     }
 
     public Main() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        loadData();
+    }
 
-        String line;
-
-        try {
-            line = br.readLine();
-            int testCases = Integer.parseInt(line);
-
-            for (int i = 0; i < testCases; i++) {
-                int computers = Integer.parseInt(br.readLine());
-                nodes = new int[computers][computers - 1];
-                slots = new int[computers];
-                for (int j = 0; j < computers - 1; j++) {
-                    line = br.readLine();
-                    String[] a = line.split(" ");
-                    int computer1 = Integer.parseInt(a[0]);
-                    int computer2 = Integer.parseInt(a[1]);
-
-                    nodes[computer1][slots[computer1]++] = computer2;
-                    nodes[computer2][slots[computer2]++]  = computer1;
-                }
-
-                getAnswer();
-
+    private void loadData() {
+        Scanner sc  = new Scanner(System.in);
+        int numOfCases = sc.nextInt();
+        while(numOfCases-- != 0) {
+            numOfComputers = sc.nextInt();
+            connections = new ArrayList<>(numOfComputers);
+            for (int i = 0; i < numOfComputers; i++) {
+                connections.add(new ArrayList<>());
+            }
+            //connections = new int[numOfComputers][numOfComputers - 1];
+            //connectionCounts = new int[numOfComputers];
+            for (int i = 0; i < numOfComputers- 1; i++) {
+                int comp1 = sc.nextInt();
+                int comp2 = sc.nextInt();
+                connections.get(comp1).add(comp2);
+                connections.get(comp2).add(comp1);
+                // /connections[comp1][connectionCounts[comp1]++] = comp2;
+                //connections[comp2][connectionCounts[comp2]++] = comp1;
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            dfs(dfs(0));
+
+            System.out.println((maxDist + 1) >> 1);
         }
     }
 
-    public static void main(String[] args) {
-        new Main();
-    }
+    private int dfs(int node) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(node);
+        boolean[] visited = new boolean[numOfComputers];
+        int[] distances = new int[numOfComputers];
 
+        visited[node] = true;
+        while(stack.size() != 0) {
+            int curr = stack.pop();
+            ArrayList<Integer> currNeighbours = connections.get(curr);
+            for (Integer currNeighbour : currNeighbours) {
+                int currentNeighbour = currNeighbour;
+                if (!visited[currentNeighbour]) {
+                    visited[currentNeighbour] = true;
+                    stack.push(currentNeighbour);
+                    distances[currentNeighbour] = distances[curr] + 1;
+                }
+            }
+        }
+
+        //find max dist
+        maxDist = 0;
+        int maximumComputer = 0;
+        for (int i = 0; i < numOfComputers; i++) {
+            if (distances[i] > maxDist) {
+                maxDist  = distances[i];
+                maximumComputer = i;
+            }
+        }
+
+        return maximumComputer;
+    }
 }
