@@ -1,10 +1,8 @@
 #include <iostream>
-#include <limits.h>
 #include <queue>
 #include <set>
-#include <functional>
-#include <assert.h>
-#include <algorithm>
+#include <limits.h>
+#include <cassert>
 
 #define CAR 1
 #define FREE 0
@@ -12,7 +10,7 @@
 using namespace std;
 
 struct node {
-    unsigned type: 2;
+    unsigned type: 1;
 };
 
 struct position {
@@ -36,7 +34,6 @@ class unique_queue {
 private:
     queue<positionInTime> m_queue;
     set<positionInTime> m_set;
-    //vector<positionInTime> m_set;
 public:
     bool push(positionInTime p) {
         m_set.find(p);
@@ -46,21 +43,6 @@ public:
             return true;
         }
         return false;
-
-//        if (m_set.insert(p).second) {
-//            m_queue.push(p);
-//            return true;
-//        }
-//        return false;
-
-//        for (auto pos : m_set) {
-//            if (pos == p) return false;
-//        }
-//
-//
-//
-//        m_set.push_back(p);
-//        m_queue.push(p);
     }
 
     void pop() {
@@ -69,20 +51,6 @@ public:
         m_set.erase(val);
 
         m_queue.pop();
-//        assert(!m_queue.empty());
-//        positionInTime val = m_queue.front();
-//
-//
-//        assert(it != m_set.end());
-//
-//
-//
-//        m_set.erase(it);
-//        m_queue.pop();
-
-//        positionInTime pos = m_queue.front();
-//        m_set.erase(remove(m_set.begin(), m_set.end(), pos), m_set.end());
-//        m_queue.pop();
     }
 
     positionInTime front() {
@@ -99,7 +67,7 @@ long mod(long a, long b) {
 }
 
 int maxIterations, numLanes, laneLength;
-position target;
+position target, initial;
 int best = INT_MAX;
 unique_queue bfsQueue;
 
@@ -136,7 +104,7 @@ bool bfs(node *map) {
         best = min(pos.time, best);
         return true;
     }
-    if (pos.time > maxIterations || pos.time >= best) return false;
+    if (pos.time >= maxIterations || pos.time >= best) return false;
     //4 directions:
     position nextPos;
     //N
@@ -181,54 +149,62 @@ int getPath(node *map, position startingPos) {
     return INT_MAX;
 }
 
+void loadChar(node *map, int j, int k) {
+    char ch;
+    cin >> ch;
+    switch (ch) {
+        case 'O':
+        (*(map)).type = FREE;
+            break;
+        case 'X':
+            (*(map)).type = CAR;
+            break;
+        case 'F':
+            (*(map)).type = FREE;
+            initial = {k, j};
+            break;
+        case 'G':
+            (*(map)).type = FREE;
+            target = {k, j};
+            break;
+        default:
+            loadChar(map, j, k);
+            //cerr << "Unknown identifier!, skipping..." << endl;
+    }
+}
 
 int main() {
     int numCases;
     //Load input
     cin >> numCases;
-    for (int i = 0; i < numCases; ++i) {
+    while (numCases--) {
         bfsQueue = unique_queue();
         maxIterations = 0;
         numLanes = 0;
         laneLength = 0;
+        initial = {-1, -1};
         target = {-1, -1};
         best = INT_MAX;
         cin >> maxIterations;
         cin >> numLanes;
         cin >> laneLength;
         node map[numLanes + 2][laneLength];
-        position initial;
         for (int j = numLanes + 1; j >= 0; --j) {
             char ch;
             for (int k = 0; k < laneLength; ++k) {
-                cin >> ch;
-                switch (ch) {
-                    case 'O':
-                        map[j][k].type = FREE;
-                        break;
-                    case 'X':
-                        map[j][k].type = CAR;
-                        break;
-                    case 'F':
-                        map[j][k].type = FREE;
-                        initial = {k, j};
-                        break;
-                    case 'G':
-                        map[j][k].type = FREE;
-                        target = {k, j};
-                        break;
-                    //default:
-                        //cerr << "Unknown identifier!, skipping..." << endl;
-                }
+                loadChar(&map[j][k], j, k);
             }
+        }
+
+        if (target.x == -1 || target.y == -1 || initial.x == -1 || initial.y == -1) {
+            cout << "The problem has no solution." << endl;
         }
 
         int result = getPath((node *) map, initial);
         if (result == INT_MAX) {
             cout << "The problem has no solution." << endl;
         } else {
-            cout << "The minimum number of turns is " << result  << "." << endl;
+            cout << "The minimum number of turns is " << result << "." << endl;
         }
     }
-
 }
