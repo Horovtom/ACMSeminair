@@ -27,10 +27,9 @@ struct positionInTime {
     }
 
     bool operator<(const positionInTime &rhs) const {
-        return time==rhs.time? x == rhs.x ? y < rhs.y : x < rhs.x : time < rhs.time;
+        return time == rhs.time ? x == rhs.x ? y < rhs.y : x < rhs.x : time < rhs.time;
     }
 };
-
 
 
 class unique_queue {
@@ -91,12 +90,12 @@ public:
     }
 
     int size() {
-        return m_queue.size();
+        return (int) m_queue.size();
     }
 };
 
 long mod(long a, long b) {
-    return (a%b + b) % b;
+    return (a % b + b) % b;
 }
 
 int maxIterations, numLanes, laneLength;
@@ -163,6 +162,11 @@ bool bfs(node *map) {
     if (isValidToBeOn(pos.time + 1, nextPos, map)) {
         bfsQueue.push({nextPos.x, nextPos.y, pos.time + 1});
     }
+
+    //Stand
+    if (isValidToBeOn(pos.time + 1, {pos.x, pos.y}, map)) {
+        bfsQueue.push({pos.x, pos.y, pos.time + 1});
+    }
     return false;
 }
 
@@ -179,15 +183,16 @@ int getPath(node *map, position startingPos) {
 
 
 int main() {
-
-
-
-
-
     int numCases;
     //Load input
     cin >> numCases;
     for (int i = 0; i < numCases; ++i) {
+        bfsQueue = unique_queue();
+        maxIterations = 0;
+        numLanes = 0;
+        laneLength = 0;
+        target = {-1, -1};
+        best = INT_MAX;
         cin >> maxIterations;
         cin >> numLanes;
         cin >> laneLength;
@@ -212,30 +217,17 @@ int main() {
                         map[j][k].type = FREE;
                         target = {k, j};
                         break;
-                    default:
-                        cerr << "Unknown identifier!, skipping..." << endl;
+                    //default:
+                        //cerr << "Unknown identifier!, skipping..." << endl;
                 }
             }
         }
-//
-//
-//        node * map1 = (node *) map;
-//        for (int time = 0; time < 10; ++time) {
-//            cout << (*(map1 + (1 * laneLength) + (mod(0 - time, laneLength)))).type;
-//            cout << (*(map1 + (1 * laneLength) + (mod(1 - time, laneLength)))).type;
-//            cout << (*(map1 + (1 * laneLength) + (mod(2 - time, laneLength)))).type;
-//            cout << (*(map1 + (1 * laneLength) + (mod(3 - time, laneLength)))).type;
-//            cout << endl;
-//
-//        }
-//        return 0;
-
 
         int result = getPath((node *) map, initial);
         if (result == INT_MAX) {
             cout << "The problem has no solution." << endl;
         } else {
-            cout << "The minimum number of turns is " << result << endl;
+            cout << "The minimum number of turns is " << result  << "." << endl;
         }
     }
 
