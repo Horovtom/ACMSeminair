@@ -1,0 +1,1 @@
+Solved in 0.12 with 15M of memory
