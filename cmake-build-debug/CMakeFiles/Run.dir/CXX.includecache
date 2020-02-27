@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lactosis/Documents/School/ACMSeminair/LS2020/8/main.cpp
+cstdio
+-
+hash_map
+-
+algorithm
+-
+
