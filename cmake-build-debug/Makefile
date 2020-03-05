@@ -123,32 +123,32 @@ Run/fast:
 	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/build
 .PHONY : Run/fast
 
-LS2020/17/main.o: LS2020/17/main.cpp.o
+LS2020/mini2/dcepc501/main.o: LS2020/mini2/dcepc501/main.cpp.o
 
-.PHONY : LS2020/17/main.o
+.PHONY : LS2020/mini2/dcepc501/main.o
 
 # target to build an object file
-LS2020/17/main.cpp.o:
-	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/17/main.cpp.o
-.PHONY : LS2020/17/main.cpp.o
+LS2020/mini2/dcepc501/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o
+.PHONY : LS2020/mini2/dcepc501/main.cpp.o
 
-LS2020/17/main.i: LS2020/17/main.cpp.i
+LS2020/mini2/dcepc501/main.i: LS2020/mini2/dcepc501/main.cpp.i
 
-.PHONY : LS2020/17/main.i
+.PHONY : LS2020/mini2/dcepc501/main.i
 
 # target to preprocess a source file
-LS2020/17/main.cpp.i:
-	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/17/main.cpp.i
-.PHONY : LS2020/17/main.cpp.i
+LS2020/mini2/dcepc501/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.i
+.PHONY : LS2020/mini2/dcepc501/main.cpp.i
 
-LS2020/17/main.s: LS2020/17/main.cpp.s
+LS2020/mini2/dcepc501/main.s: LS2020/mini2/dcepc501/main.cpp.s
 
-.PHONY : LS2020/17/main.s
+.PHONY : LS2020/mini2/dcepc501/main.s
 
 # target to generate assembly for a file
-LS2020/17/main.cpp.s:
-	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/17/main.cpp.s
-.PHONY : LS2020/17/main.cpp.s
+LS2020/mini2/dcepc501/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Run.dir/build.make CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.s
+.PHONY : LS2020/mini2/dcepc501/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Run"
 	@echo "... edit_cache"
-	@echo "... LS2020/17/main.o"
-	@echo "... LS2020/17/main.i"
-	@echo "... LS2020/17/main.s"
+	@echo "... LS2020/mini2/dcepc501/main.o"
+	@echo "... LS2020/mini2/dcepc501/main.i"
+	@echo "... LS2020/mini2/dcepc501/main.s"
 .PHONY : help
 
 

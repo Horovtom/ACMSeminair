@@ -3,4 +3,4 @@ project(ACMSeminair)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Run LS2020/17/main.cpp)
+add_executable(Run LS2020/mini2/dcepc501/main.cpp)

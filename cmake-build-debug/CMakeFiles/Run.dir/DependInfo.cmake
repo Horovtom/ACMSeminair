@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lactosis/Documents/School/ACMSeminair/LS2020/17/main.cpp" "/home/lactosis/Documents/School/ACMSeminair/cmake-build-debug/CMakeFiles/Run.dir/LS2020/17/main.cpp.o"
+  "/home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp" "/home/lactosis/Documents/School/ACMSeminair/cmake-build-debug/CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/lactosis/Documents/School/ACMSeminair/LS2020/8/main.cpp
-cstdio
+/home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp
+iostream
 -
-hash_map
+vector
 -
-algorithm
+cstring
+-
+climits
 -
 

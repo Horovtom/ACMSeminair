@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Run.dir/LS2020/17/main.cpp.o  -o Run 
+/usr/bin/c++  -g   CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o  -o Run 
