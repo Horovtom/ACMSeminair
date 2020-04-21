@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o"
+  "CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o"
   "Run.pdb"
   "Run"
 )

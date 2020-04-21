@@ -57,27 +57,27 @@ include CMakeFiles/Run.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Run.dir/flags.make
 
-CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o: CMakeFiles/Run.dir/flags.make
-CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o: ../LS2020/mini2/dcepc501/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lactosis/Documents/School/ACMSeminair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o -c /home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp
+CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o: CMakeFiles/Run.dir/flags.make
+CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o: ../LS2020/mini3/necklace/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lactosis/Documents/School/ACMSeminair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o -c /home/lactosis/Documents/School/ACMSeminair/LS2020/mini3/necklace/main.cpp
 
-CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp > CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.i
+CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lactosis/Documents/School/ACMSeminair/LS2020/mini3/necklace/main.cpp > CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.i
 
-CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp -o CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.s
+CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lactosis/Documents/School/ACMSeminair/LS2020/mini3/necklace/main.cpp -o CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.s
 
 # Object files for target Run
 Run_OBJECTS = \
-"CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o"
+"CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o"
 
 # External object files for target Run
 Run_EXTERNAL_OBJECTS =
 
-Run: CMakeFiles/Run.dir/LS2020/mini2/dcepc501/main.cpp.o
+Run: CMakeFiles/Run.dir/LS2020/mini3/necklace/main.cpp.o
 Run: CMakeFiles/Run.dir/build.make
 Run: CMakeFiles/Run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lactosis/Documents/School/ACMSeminair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Run"

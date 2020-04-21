@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp">
+		<Unit filename="/home/lactosis/Documents/School/ACMSeminair/LS2020/mini3/necklace/main.cpp">
 			<Option target="Run"/>
 		</Unit>
 		<Unit filename="/home/lactosis/Documents/School/ACMSeminair/CMakeLists.txt">

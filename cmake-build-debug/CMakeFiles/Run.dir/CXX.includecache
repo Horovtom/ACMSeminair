@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/lactosis/Documents/School/ACMSeminair/LS2020/mini2/dcepc501/main.cpp
-iostream
--
-vector
+/home/lactosis/Documents/School/ACMSeminair/LS2020/mini3/necklace/main.cpp
+cstdio
 -
 cstring
 -
-climits
+iostream
 -
 
